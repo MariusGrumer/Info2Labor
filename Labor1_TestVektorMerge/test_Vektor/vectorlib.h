@@ -6,9 +6,10 @@ using namespace std;
 //weitere sinnvolle Funktionen sinnvoll
 
 int merge(int* v1, int v1Len, int* v2, int v2Len, int* vDest);			//Wie in Aufgabenstellung gefordert
-
+//Deklaration in cpp Datei
 int merge(int* v1, int v1Len, int* v2, int v2Len, int* vDest) {
-	int vDestLen = v1Len + v2Len;					//ggf
+	//Abfrage ob sortiert --> in eigene Funktion
+	int vDestLen = v1Len + v2Len;					//umbennen, weil nicht länge sondern Anz Elemente
 	int* v1ptr = v1;
 	int* v2ptr = v2;
 	/*
