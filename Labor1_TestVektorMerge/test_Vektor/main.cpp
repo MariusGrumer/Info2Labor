@@ -1,17 +1,15 @@
-//test
-
 #include <iostream>
 #include"vectorlib.h"
 using namespace std;
-//Test erste Version merge Funktion 23.03., Sebastian
+//Zweite Version merge Funktion 24.03., Sebastian
 
 void aneinanderreihen(int* v1, int v1Len, int* v2, int v2Len, int* vDest);
 void ausgabe(int* v, int vLen);
 int main()
 {
 	//Vektordefinition vereinfacht zu Probezwecken
-	const int v1Len = 4;			
-	int v1[v1Len] = { 2,3,6,8 };
+	const int v1Len = 8;
+	int v1[v1Len] = { 1,1,2,3,6,8,9,9 };
 	const int v2Len = 4;
 	int v2[v2Len] = { 1,4,6,8 };
 	int vDest[v1Len + v2Len];
@@ -58,23 +56,23 @@ int main()
 }
 
 void aneinanderreihen(int* v1, int v1Len, int* v2, int v2Len, int* vDest) { //aneinanderreihen von zwei Vektoren, Test, funktioniert
-	
-		for (int* ptrv1 = v1; (ptrv1 - v1) < v1Len; ptrv1++)
-		{
-			*vDest = *ptrv1;
-			vDest++;
-		}
-		for (int* ptrv2 = v2; (ptrv2 - v2) < v2Len; ptrv2++)
-		{
-			*vDest = *ptrv2;
-			vDest++;
-		}
-			
+
+	for (int* ptrv1 = v1; (ptrv1 - v1) < v1Len; ptrv1++)
+	{
+		*vDest = *ptrv1;
+		vDest++;
+	}
+	for (int* ptrv2 = v2; (ptrv2 - v2) < v2Len; ptrv2++)
+	{
+		*vDest = *ptrv2;
+		vDest++;
 	}
 
-void ausgabe(int*v, int vLen)		//Vereinfachte Ausgabe, ggf. neu ohne Übergabe Länge
+}
+
+void ausgabe(int* v, int vLen)		//Vereinfachte Ausgabe, ggf. neu ohne Übergabe Länge
 {
-	
+
 	for (int* ptr = v; (ptr - v) < vLen; ptr++)
 	{
 		cout << *ptr;
