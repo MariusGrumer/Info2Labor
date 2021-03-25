@@ -1,37 +1,65 @@
+//Informatik 2 Labor – 3er Team(Abgesprochen mit Herr Prof.Wietzke)
+// 
+//Teilnehmer			Matr.Nr.	Kurs			Semester	VS- Version		Betriebssystem
+//Philipp Huber			63326	Maschinenbau(Mabb)	6			2019 Community	Windows 10
+//Marius Grumer			63284	Maschinenbau(Mabb)	6			2019 Community	Windows 10
+//Sebastian Schmitt		63304	Maschinenbau(Mabb)	6			2019 Community	Windows 10
+//
+//Datum: 2021.03.23
+//
+//Sinn, Zweck der Datei:
+//hier läuft das eigentliche Programm
+//
+
+
+
 #include <iostream>
 #include"vectorlib.h"
 using namespace std;
-//Zweite Version merge Funktion 24.03., Sebastian
+
 
 
 
 
 int main()
 {
-	//Einlesen fehlt --> Philipp?
-	//Vektordefinition vereinfacht zu Probezwecken
-	const int v1Len = 8;
-	int v1[v1Len] = { 1,3,3,4,5,6,7,7 };
-	const int v2Len = 4;
-	int v2[v2Len] = { 1,2,6,8 };
-	int vDest[v1Len + v2Len];			//Vektor mit ausreichender Länge definieren
+	int v1Len, v2Len;													//Initialisieung der Variablen fpr die Länge der Vektoren
 
-	int vDestLen = merge(v1, v1Len, v2, v2Len, vDest);		//Rückgabewert der Funktion merge wird abgespeichert
+	//1. Vektor
+	einlesenLaenge(&v1Len, 1);											//Einlesen der Länge, Adresse wird übergeben
 
-	if(vDestLen <= 0)						//Hier werden Fehler abgefangen
+	int* v1 = new int[v1Len];											//Erzeugen dyn Array der Laenge v1Len
+	einlesen(v1, v1Len);												//Einlesen des Vektors v1 mit der Länge V1Len
+
+
+
+	//2.Vektor															//Wiederholung (siehe oben)
+	einlesenLaenge(&v2Len, 2);
+
+	int* v2 = new int[v2Len];
+	einlesen(v2, v2Len);
+
+	
+
+
+	int* vDest = new int[v1Len+v2Len];									//Vektor mit ausreichender Länge definieren
+
+	int vDestLen = merge(v1, v1Len, v2, v2Len, vDest);					//Rückgabewert der Funktion merge wird abgespeichert
+
+	if(vDestLen <= 0)													//Hier werden Fehler abgefangen 
 	{
-		cout << "Error /n Fehlercode: " << vDestLen << endl;
+		cout << "Error \nFehlercode: " << vDestLen << endl;
 		cout << "ein Vektor ist nicht Sortiert" << endl;
 		return(0);
 	}
 
-	cout << " Vektor 1: ";
-	ausgabe(v1, v1Len);
-	cout << " Vektor 2: ";
-	ausgabe(v2, v2Len);
-	cout << " Ergebnis: ";
+	cout << " Ergebnis: ";												// Ausgabe des Ergebis Vektors
 	ausgabe(vDest, vDestLen);
 
+
+	delete[] v1;														//Löschen der dyn Arrays
+	delete[] v2;
+	delete[] vDest;
 
 	return (0);
 }
