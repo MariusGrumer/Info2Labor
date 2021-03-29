@@ -4,10 +4,10 @@
 //Philipp Huber			63326	Maschinenbau(Mabb)	6			2019 Community	Windows 10
 //Marius Grumer			63284	Maschinenbau(Mabb)	6			2019 Community	Windows 10
 //
-//Datum: 2021.03.23
+//Datum: 2021.03.27
 //
 //Sinn, Zweck der Datei:
-//Deklarieren der Funktionen
+//Implementieren der Funktionen
 //
 
 
