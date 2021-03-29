@@ -1,9 +1,8 @@
-//Informatik 2 Labor – 3er Team(Abgesprochen mit Herr Prof.Wietzke) 
+//Informatik 2 Labor
 // 
 //Teilnehmer			Matr.Nr.	Kurs			Semester	VS- Version		Betriebssystem
 //Philipp Huber			63326	Maschinenbau(Mabb)	6			2019 Community	Windows 10
 //Marius Grumer			63284	Maschinenbau(Mabb)	6			2019 Community	Windows 10
-//Sebastian Schmitt		63304	Maschinenbau(Mabb)	6			2019 Community	Windows 10
 //
 //Datum: 2021.03.24
 //
