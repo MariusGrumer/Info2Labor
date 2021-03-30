@@ -13,6 +13,7 @@
 
 
 #include"vectorlib.h"
+#include <iostream>
 using namespace std;
 
 void einlesenLaenge(int* vLen, int Vektornummer)
@@ -25,7 +26,7 @@ void einlesenLaenge(int* vLen, int Vektornummer)
 																				//Schleife läuft so lange bis vLen für das richtige Intervall angegeben wurde
 }
 
-void einlesen(int* vektoradr, int vektLen)					
+void einlesen(int* vektoradr, int& vektLen)					
 {
 																		
 	for (int* ptr = vektoradr; (ptr - vektoradr) < vektLen; ptr++)				//Schleife, die für jede Position einen Wert für den Vektor einliest

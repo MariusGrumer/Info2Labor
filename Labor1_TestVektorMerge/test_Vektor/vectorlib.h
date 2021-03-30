@@ -14,12 +14,10 @@
 
 
 #pragma once
-#include <iostream>
-using namespace std;
 
 void einlesenLaenge(int* vLen, int Vektornummer);					//Einlesen der Länge des Vektors (bsp 1. Vektor hat die Vektornummer = 1)
 
-void einlesen(int* vektoradr, int vektLen);							//Funktion zum Einlesen von Vektoren
+void einlesen(int* vektoradr, int& vektLen);							//Funktion zum Einlesen von Vektoren
 
 int merge(int* v1, int v1Len, int* v2, int v2Len, int* vDest);		//Wie in Aufgabenstellung gefordert
 
