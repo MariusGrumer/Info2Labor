@@ -139,7 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Labor2_PhoneCard.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="PhoneCard.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PhoneCard.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

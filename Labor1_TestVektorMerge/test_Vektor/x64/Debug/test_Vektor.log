@@ -1,4 +1,8 @@
 ﻿  main.cpp
   vectorlib.cpp
   Code wird generiert...
+<<<<<<< HEAD
   test_Vektor.vcxproj -> C:\Users\mariu\Documents\Hochschule\6.Semester\Info2\Info2Labor\Labor1_TestVektorMerge\x64\Debug\test_Vektor.exe
+=======
+  test_Vektor.vcxproj -> C:\Users\Philipp\Desktop\Info_Labor\Info2Labor\Labor1_TestVektorMerge\x64\Debug\test_Vektor.exe
+>>>>>>> 7ff989823c3c27b9b1954034b07d8e07da51aead
