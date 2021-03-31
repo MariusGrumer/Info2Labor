@@ -52,7 +52,7 @@ int main()
 
 	cout << "Groesse von DSObject: " << sizeof(DSObject) << endl;
 	cout << "Groesse von StackObject: " << sizeof(StackObject) << endl;
-	cout << "Groesse von HeapObject: " << sizeof(HeapObject) << endl;
+	cout << "Groesse von HeapObject: " << sizeof(*HeapObject) << endl;
 
 	delete HeapObject;
 
