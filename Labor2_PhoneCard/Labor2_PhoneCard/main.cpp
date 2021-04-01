@@ -19,10 +19,10 @@ void phoneCardRefill_15();
 
 
 //globale Variable phoneCard mit dem Startguthaben 15 Euro:
-int phoneCard = 15;
+unsigned int phoneCard = 15;			//kann nicht negativ werden
 
 //globale Variable welche den Status des Guthabens wiedergibt:
-int phoneCardStatus = 2;
+int phoneCardStatus = 2;		
 
 
 
@@ -51,22 +51,32 @@ int main()
 
 void phoneCardMakeCall()
 {
-	switch (phoneCardStatus)
+	switch (phoneCard)
 	{
 	case 0:
+		phoneCardStatus = 0;
 		break;
-	case 1:
+	case 3:
+		phoneCard -= 3;
+		phoneCardStatus = 0;
 		break;
-	case 2:
+	case 6:
+		phoneCard -= 3;
+		phoneCardStatus = 0;
+		break;
+	case 9:
+		phoneCard -= 3;
+		phoneCardStatus = 1;
+		break;
+	case 12:
+		phoneCard -= 3;
+		phoneCardStatus = 1;
 		break;
 	default:
+		phoneCard -= 3;
+		phoneCardStatus = 2;
 		break;
-
 	}
-
-
-	phoneCard -= 3;
-
 }
 
 void phoneCardDisplay()
