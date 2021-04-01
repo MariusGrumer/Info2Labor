@@ -7,12 +7,13 @@
 //Datum: 2021.03.30
 //
 //Sinn, Zweck der Datei:
-//hier läuft das eigentliche Programm
-//
+//hier läuft das eigentliche Programm und die Funtktionen werden deklariert
+//die Objektorientierte Variente ist in dem Projekt Labor2_Phonecard_OOP zu finden
 
 #include <iostream>
 using namespace std;
 
+//Deklaration der Funktionen, die unten im Programm implementiert werden
 void phoneCardMakeCall();
 void phoneCardDisplay();
 void phoneCardRefill_15();
@@ -28,6 +29,7 @@ int phoneCardStatus = 2;
 
 int main()
 {
+	//gefordeter Aufruf der Funktionen
 	phoneCardDisplay();
 	phoneCardMakeCall();
 	phoneCardDisplay();
@@ -49,10 +51,10 @@ int main()
 	return 0;
 }
 
-void phoneCardMakeCall()
+void phoneCardMakeCall()							//Funktion für die Anruffuntion
 {
-	switch (phoneCard)
-	{
+	switch (phoneCard)								//je nach Guthaben wird der Anruf ausgeführt (Geld abgezogen) und der Status entsprechend gesetzt
+	{												//Es sind immer nur die Vielfachen von 3 von Bedeutung, da nur 3 abgezogen werden kann
 	case 0:
 		phoneCardStatus = 0;
 		break;
@@ -81,7 +83,7 @@ void phoneCardMakeCall()
 
 void phoneCardDisplay()
 {
-	switch (phoneCardStatus)				//Ausgabe des Guthabens und des Kartenstatus
+	switch (phoneCardStatus)											//Ausgabe des Guthabens und des Kartenstatus je nach dem welcher Status in der globalen Variable des Statuses hinterlegt ist
 	{
 	case 0:
 		cout << "Karte bitte auffuellen " << phoneCard<< endl;
@@ -100,7 +102,7 @@ void phoneCardDisplay()
 
 void phoneCardRefill_15()
 {
-	phoneCard += 15;
+	phoneCard += 15;													//die globaen Variablen zu Guthaben und Status werden bei einem Aufladen angepasst
 	phoneCardStatus = 2;
 }
 
