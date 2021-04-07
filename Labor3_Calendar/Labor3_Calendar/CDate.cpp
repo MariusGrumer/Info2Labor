@@ -1,10 +1,21 @@
+//Informatik 2 Labor
+// 
+//Teilnehmer			Matr.Nr.	Kurs			Semester	VS- Version		Betriebssystem
+//Philipp Huber			63326	Maschinenbau(Mabb)	6			2019 Community	Windows 10
+//Marius Grumer			63284	Maschinenbau(Mabb)	6			2019 Community	Windows 10
+//
+//Datum: 2021.04.07
+//
+//Sinn, Zweck der Datei:
+//Implementierung der Mehtoden
+
 
 #include <iostream>
 #include "CDate.h"
 
 using namespace std;
 
-CDate::CDate()
+CDate::CDate()										//Ctor ohne Parameter
 {
 	mPrevDays = 1;
 	mDay = 1;
@@ -12,7 +23,7 @@ CDate::CDate()
 	mYear = 1600;
 }
 
-CDate::CDate(int pDay, int pMonth, int pYear)
+CDate::CDate(int pDay, int pMonth, int pYear)		//Ctor mit Parameter
 {
 	mDay = pDay;
 	mMonth = pMonth;
@@ -84,15 +95,16 @@ CDate::CDate(int pDay, int pMonth, int pYear)
 
 }
 
-unsigned long int CDate::difference(CDate pDate)
+unsigned long int CDate::difference(CDate pDate)					//ermittelt Differenz zwischen übergebenen Objekt und dem Datum des eigenen Objektes
 {
-	return pDate.getDays()- mPrevDays;
+	return pDate.getDays()- mPrevDays;								//zugriff mittels pDate.getDays() auf Tage des Übergebenen Objektes; Zugriff auf die privaten Attribute mittels Aufruf der Variblen mPreDays
 }
-unsigned long int CDate::getDays()
+
+unsigned long int CDate::getDays()									//Methode um das Attribut mPrevDays aus private zurückzugeben
 {
 	return mPrevDays;
 }
-string CDate::getDayOfWeek()
+string CDate::getDayOfWeek()										//Methode um den Wochentag zu ermittlen
 {
 	//1.1.1600 war ein Samstag
 	switch (mPrevDays % 7)		//ausgehend von 1.1.1600 werden Wochen mit Modulo Operator eingeteilt und der entsprechende Tag zurückgegeben
@@ -119,12 +131,13 @@ string CDate::getDayOfWeek()
 		return "Freitag";
 		break;
 	default:
-		return "-1";
+		return "-1";			//Errorhandling
 		break;
 	}
 }
 void CDate::display()		
 {
 	cout << this->getDayOfWeek() << ", " << mDay << "." << mMonth << "." << mYear << "  ( " << mPrevDays << ". Tag seit 01.01.1600 )" << endl;
+			// mittels dem Pfeiloperator kann auf auf die Methode der eigenen Klasse aufgeführt werden. Ansonsten erhält man keinen Zugriff auf mPrevDays, da diese private sind.
 }
 
