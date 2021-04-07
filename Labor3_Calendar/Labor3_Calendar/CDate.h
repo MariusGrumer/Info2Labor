@@ -6,18 +6,17 @@ using namespace std;
 class CDate
 {
 public:
-	CDate();
-	CDate(int pDay, int pMonth, int pYear);
+	CDate();											//Ctor ohne param
+	CDate(int pDay, int pMonth, int pYear);				//Ctor mit param
 
-	int difference(int pDay, int pMonth, int pYear);
-	int getDays();
-	string getDayOfWeek();
-	void display();
+	unsigned long int difference(CDate pDate);	//gibt differenz in Tagen zwischen 2 Datum zurück
+	unsigned long int getDays();						//gibt mPrevDays (Tage seit 1.1.1600) zurück
+	string getDayOfWeek();								//gibt Name des Wochentages zurück
+	void display();										//gibt Informationen auf Konsole aus
 
 private:
-	int mPrevDays;
-	int mDay;
-	int mMonth;
-	int mYear;
-
+	unsigned long int mPrevDays;		//Vergangene Tage seit 1.1.1600
+	int mDay;							// Datum aktueller Tag
+	int mMonth;							//Datum aktueller Monat
+	int mYear;							//Datum aktuelles Jahr
 };
