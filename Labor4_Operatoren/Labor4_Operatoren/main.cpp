@@ -25,6 +25,7 @@ MyClass GlobalObject;
 
 int main()
 {
+	cout << "start" << endl;
 	MyClass StackObject;
 	MyClass *HeapObject = new MyClass;
 
