@@ -14,11 +14,10 @@
 class MyClass
 {
 public:
-	MyClass();											//Ctor ohne param
-	~MyClass();											//dtor
+	MyClass();								//Ctor mit param Name
+	~MyClass();											//Dtor
 	MyClass(const MyClass &rhs);						//copy Ctor
 	MyClass& operator=(const MyClass&);					//Zuweisungsoperator
 
 private:
-
 };
