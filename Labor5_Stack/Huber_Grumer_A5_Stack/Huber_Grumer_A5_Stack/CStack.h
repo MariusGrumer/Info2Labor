@@ -1,7 +1,7 @@
-#pragma once
+//#pragma once
 
-//#ifdef CSTACK_H_
-//#define CSTACK_H_
+#ifndef CSTACK_H_
+#define CSTACK_H_
 
 #include "CMessage.h"
 
@@ -26,4 +26,4 @@ private:
 };
 
 
-//#endif // CSTACK_H_
+#endif // CSTACK_H_
