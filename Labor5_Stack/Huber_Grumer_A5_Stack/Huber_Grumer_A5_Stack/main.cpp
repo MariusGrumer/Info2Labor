@@ -12,12 +12,18 @@ using std::endl;
 int main()
 {
 
-	int maxNachrichten;
+	int stackSize;
 	int Wahl;
 	cout << "Bitte geben Sie die Anzahl der Nachrichten ein, die der Stack maximal aufnehmen kann: ";
-	cin >> maxNachrichten;
 
-	CStack myStack(maxNachrichten);
+	while (!(cin >> stackSize))									//Einlesen der Stacksize, solange bis die richtigen Werte eingegeben wurden
+	{
+		cout << "Fehlerhafte Eingabe" << endl;
+		cin.clear();
+		cin.ignore(std::numeric_limits<int>::max(), '\n');		//löschen des Buffers
+	}
+
+	CStack myStack(stackSize);
 	CMessage myMessage;
 
 
@@ -33,18 +39,26 @@ int main()
 			char tempmsg[MSG_MAX_LEN];
 			
 			cout << "Ihre Nachricht: ";
+			do
+			{
+				while (!(cin >> tempmsg))										//Einlesen von tempmsg, abfangen von Flascheingaben
+				{
+					cout << "Fehlerhafte Eingabe" << endl;
+					cin.clear();
+					cin.ignore(std::numeric_limits<int>::max(), '\n');			//Buffer löschen
 
-			while (!(cin >> tempmsg))
-			{
-				std::cout << "Falsche Eingabe!" << std::endl;
-				std::cin.clear();
-				std::cin.ignore(std::numeric_limits<int>::max(), '\n');
-			}
+				}
+				if (strlen(tempmsg) >= MSG_MAX_LEN) {							//Falls zu viele Zeichen eingegeben wurden
+					cout << "Fehlerhafte Eingabe: zu viele Zeichen!" << endl;	//Rückmeldung 
+				}
+			} while (strlen(tempmsg) >= MSG_MAX_LEN);							//Es soll solange ein Wert eingelesen werden, bis dieser richtig ist
+
 			
-			myMessage.setMsg(tempmsg);
-			if (myStack.push(myMessage))
-			{
-				cout << "(" << myStack.getNumOfMessages() << ", " << tempmsg << ") wurde in den Stack geschrieben." << endl;
+			myMessage.setMsg(tempmsg);											//kopieren der tempmsg in myMessage
+			myMessage.setID(myStack.getNumOfMessages());						//Die Id der Message entspricht der Nummer auf dem Stack
+			if (myStack.push(myMessage))										//Abfangen von Fehlern beim push vorgang (Stack voll?), schreiben von MyMessage auf Stack
+			{	
+				cout << "(" << myMessage.getID() << ", " << tempmsg << ") wurde in den Stack geschrieben." << endl;
 				myStack.display();
 			}
 			else
@@ -56,12 +70,11 @@ int main()
 			
 		case 2:
 		{
-			cout << "POP " << endl;
-			char tempmsg[MSG_MAX_LEN];
-			if (myStack.pop(myMessage))
+			char tempmsg[MSG_MAX_LEN];	
+			if (myStack.pop(myMessage))											//Abfangen von Fehlern, beim lesen des Stack, kopieren der StackMessage in myMessage
 			{
-				myMessage.getMsg(tempmsg);
-				cout << "(" << myStack.getNumOfMessages() << ", " << tempmsg << ") wurde vom Stack genommen." << endl;
+				myMessage.getMsg(tempmsg);										//kopieren der Msg von myMessage in tempmsg
+				cout << "(" << myMessage.getID() << ", " << tempmsg << ") wurde vom Stack genommen." << endl;
 				myStack.display();
 			}
 			else
@@ -79,10 +92,11 @@ int main()
 		}
 
 		default:
-			cout << "Falsche Eingabe" << endl;
+			cout << "Ihre Eingabe wurde nicht erkannt. Bitte versuchen Sie es nocheinmal." << endl;					//Abfangen von Falsch eingegebenen Werten für Wahl
+			cin.clear();
+			cin.ignore(std::numeric_limits<int>::max(), '\n');														//löschen des Buffers
 			break;
-		}			//end switch case
-
+		}			
 
 		
 		cout << endl;

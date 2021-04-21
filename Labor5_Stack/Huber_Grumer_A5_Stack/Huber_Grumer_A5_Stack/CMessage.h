@@ -3,7 +3,7 @@
 #define CMESSAGE_H_
 #include<cstring>						//Funktion "strcpy_s()"
 
-const int	 MSG_MAX_LEN = 3;
+const int	 MSG_MAX_LEN = 255;
 
 class CMessage
 {

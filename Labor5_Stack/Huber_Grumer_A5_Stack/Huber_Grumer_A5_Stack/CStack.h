@@ -13,7 +13,7 @@ public:
 	bool push(const CMessage& msg);		//eine Nachricht auf den Stack legen
 	bool pop(CMessage & msg);			//eien nachricht vom Stack herunterholen
 	int getNumOfMessages(void);			//Aktuelle Anzahl der Nachrichten auf dem Stack
-	int getNumOfByteNeedet(void);		//Anzahl der Bytes, die vom Stack insgesmat belegt werden
+	int getNumOfByteNeeded(void);		//Anzahl der Bytes, die vom Stack insgesmat belegt werden
 
 	void display(void);					//Gibt den gesamten aktuellen INhalt des Stacks auf dem Bildschirm aus
 
