@@ -1,4 +1,16 @@
-//#pragma once
+//Informatik 2 Labor
+// 
+//Teilnehmer			Matr.Nr.	Kurs			Semester	VS- Version		Betriebssystem
+//Philipp Huber			63326	Maschinenbau(Mabb)	6			2019 Community	Windows 10
+//Marius Grumer			63284	Maschinenbau(Mabb)	6			2019 Community	Windows 10
+//
+//Datum: 2021.04.21
+//
+//Sinn, Zweck der Datei:
+//Deklaration der Methoden der Klasse CMessage (in Aufgabe gegeben)
+
+
+//#pragma once							//Alternativ
 #ifndef CMESSAGE_H_
 #define CMESSAGE_H_
 #include<cstring>						//Funktion "strcpy_s()"
@@ -10,7 +22,7 @@ class CMessage
 public:
 	int getID();
 	void setID(int id);
-	void getMsg(char* Msg)			//done?
+	void getMsg(char* Msg)		
 	{
 		strcpy_s(Msg, MSG_MAX_LEN, mMsg);
 		//Fuer C-String (Null terminerte Stings)
