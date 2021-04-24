@@ -72,7 +72,7 @@ int main()
 			}
 			else
 			{
-				cout << "Der Stack ist voll! Ihre Nachricht konnte nicht geschrieben werden." << endl<<"!Der Index wurde entgegeen des Screendumps aus der Aufgabenstellung NICHT erhoeht!"<<endl;
+				cout << "Der Stack ist voll! Ihre Nachricht konnte nicht geschrieben werden." << endl<<"!Der Index wurde im Gegensatz zu den Screendumps aus der Aufgabenstellung NICHT erhoeht!"<<endl;
 			}
 			break;
 		}

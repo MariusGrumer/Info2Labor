@@ -101,7 +101,7 @@ void CStack:: display(void)													//Gibt den gesamten aktuellen INhalt des
 	}
 	
 	cout << "]" << endl;
-	cout << "aktuell sind durch den Stack " << this->getNumOfByteNeeded() << " bytes belegt" << endl;	//muss wieder gelöscht werden
+	//cout << "aktuell sind durch den Stack " << this->getNumOfByteNeeded() << " bytes belegt" << endl;	// Kontrollausgabe für belegten Speicher
 
 }
 
