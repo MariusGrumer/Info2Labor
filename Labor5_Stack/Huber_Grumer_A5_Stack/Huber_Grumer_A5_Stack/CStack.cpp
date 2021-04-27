@@ -25,7 +25,7 @@ CStack::CStack(int stackize) :mSize(stackize),mStackIndex(0)					//Ctor mit List
 
 CStack::~CStack()																//dtor
 {
-	delete mStackPtr;
+	delete [] mStackPtr;
 }
 
 
