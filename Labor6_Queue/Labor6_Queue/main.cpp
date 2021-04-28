@@ -1,3 +1,15 @@
+//Informatik 2 Labor
+// 
+//Teilnehmer			Matr.Nr.	Kurs			Semester	VS- Version		Betriebssystem
+//Philipp Huber			63326	Maschinenbau(Mabb)	6			2019 Community	Windows 10
+//Marius Grumer			63284	Maschinenbau(Mabb)	6			2019 Community	Windows 10
+//
+//Datum: 2021.04.28
+//
+//Sinn, Zweck der Datei:
+//Hier läuft das eigentliche Programm
+
+
 #include <iostream>
 #include "CQueue.h"
 using namespace std;
@@ -5,8 +17,8 @@ using namespace std;
 
 int main()
 {
-	int queueSize;
-	int option;
+	int queueSize;												//Zum einlsen der Stacksize
+	int option;													//Zum Einlesen was ausgeführt werden soll
 	cout << "Bitte geben Sie die Anzahl der Nachrichten ein, die die Warteschlange maximal aufnehmen kann: ";
 
 	while (!(cin >> queueSize))									//Einlesen der Stacksize, solange bis die richtigen Werte eingegeben wurden
@@ -19,7 +31,7 @@ int main()
 	CQueue myQueue(queueSize);									//ctor mit Parameter
 	CMessage myMessage;											//Standart ctor
 
-	int messageId = 0;
+	int messageId = 0;											//id, die hochzählt, wenn "enqueue" ausgewählt wird. Zählt auch hoch, wenn die Queue voll ist
 
 	do
 	{
