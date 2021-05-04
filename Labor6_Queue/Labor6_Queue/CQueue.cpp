@@ -15,10 +15,10 @@ bool CQueue::enqueue(const CMessage& msg)
 		return false;
 
 	mQueueArray[mTailIndex] = msg;				// write
-	mTailIndex++;							// Index ++
+	mTailIndex++;								// Index ++
 	mCurrentSize++;
 
-	if (mTailIndex >= mMaxSize)				// wrap around
+	if (mTailIndex >= mMaxSize)					// wrap around
 		mTailIndex = 0;
 
 	return true;
@@ -26,13 +26,13 @@ bool CQueue::enqueue(const CMessage& msg)
 
 bool CQueue::dequeue(CMessage& msg)
 {
-	if (mCurrentSize == 0)					// leer?
+	if (mCurrentSize == 0)						// leer?
 		return false;
 	msg = mQueueArray[mHeadIndex];				// read
-	mHeadIndex++;							// index
+	mHeadIndex++;								// index
 	mCurrentSize--;
 
-	mHeadIndex = mHeadIndex % mMaxSize;		// andere Moeglichkeit für wrap around
+	mHeadIndex = mHeadIndex % mMaxSize;			// andere Moeglichkeit für wrap around
 	return true;
 }
 
@@ -84,7 +84,7 @@ void CQueue::display()
 		}
 		
 		displayIndex++;									// erhöhen Index
-		displayIndex = displayIndex % mMaxSize;			//Wrap around
+		displayIndex = displayIndex % mMaxSize;			// wrap around
 	}
 
 	cout << "]";

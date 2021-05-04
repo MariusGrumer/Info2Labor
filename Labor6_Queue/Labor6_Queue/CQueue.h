@@ -17,7 +17,7 @@ private:
 	int mMaxSize;						// Max. Größe der Warteschlange
 	CMessage* mQueueArray;				// Warteschlange (Array/ Ringspeicher)
 
-	int mCurrentSize;			// Füllstand
-	int mHeadIndex;				// readIndex
-	int mTailIndex;				// writeIndex
+	int mCurrentSize;					// Füllstand
+	int mHeadIndex;						// readIndex
+	int mTailIndex;						// writeIndex
 };
