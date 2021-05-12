@@ -42,15 +42,15 @@ int main()
 
 			cout << "Ihre Nachricht: ";
 			cin >> pdata;
-			myStack.push(pdata);
-			myStack.display();
+			myStack.push(pdata);			//auf stack legen
+			myStack.display();				//anzeigen
 			break;
 		}
 
 		case 2:
 		{
 			
-			if (myStack.pop(pdata))											//Abfangen von Fehlern, beim lesen des Stack, kopieren der StackMessage in myMessage
+			if (myStack.pop(pdata))											//von Stack nehmen und abfangen von Fehler
 			{
 				cout << "Folgendes wurde gelesen: " << pdata << endl;
 				cout << "Der restliche Stack lautet wie folgt: ";
