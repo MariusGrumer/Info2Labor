@@ -4,7 +4,7 @@
 //Philipp Huber			63326	Maschinenbau(Mabb)	6			2019 Community	Windows 10
 //Marius Grumer			63284	Maschinenbau(Mabb)	6			2019 Community	Windows 10
 //
-//Datum: 2021.05.12
+//Datum: 2021.05.19
 //
 //Sinn, Zweck der Datei:
 //Implementierung der Klasse CQueueDyn
@@ -47,7 +47,7 @@ bool CQueueDyn::dequeue(string& pElement)
 	if (mHeadPtr == NULL)										// wenn Queue leer ist
 		return false;
 
-	pElement = mHeadPtr->mData;
+	pElement = mHeadPtr->mData;									// Auslesen von Daten
 	CElement* tmpPtr = mHeadPtr;
 	mHeadPtr = mHeadPtr->mPtrNext;								// HeadPtr umhängen
 	tmpPtr->mPtrNext = NULL;									// zum löschen Ptr entkoppeln
@@ -69,7 +69,7 @@ void CQueueDyn::display(void)
 	while (tmpPtr != NULL)					//am Ende angekommen
 	{
 		cout << tmpPtr->mData;				//Data ausgeben
-		if (tmpPtr->mPtrNext != NULL)			//Abfrage wegen Formatierung; ob Komma dazwischen muss
+		if (tmpPtr->mPtrNext != NULL)		//Abfrage wegen Formatierung; ob Komma dazwischen muss
 		{
 			cout << ", ";
 		}

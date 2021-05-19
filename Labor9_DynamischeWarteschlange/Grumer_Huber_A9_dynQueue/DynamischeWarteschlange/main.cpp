@@ -4,7 +4,7 @@
 //Philipp Huber			63326	Maschinenbau(Mabb)	6			2019 Community	Windows 10
 //Marius Grumer			63284	Maschinenbau(Mabb)	6			2019 Community	Windows 10
 //
-//Datum: 2021.05.12
+//Datum: 2021.05.19
 //
 //Sinn, Zweck der Datei:
 //Hier läuft das Eigentliche Programm
@@ -45,9 +45,8 @@ int main()
 			if (myQueue.dequeue(pdata))											//von Stack nehmen und abfangen von Fehler
 			{
 				cout << "Folgendes wurde gelesen: " << pdata << endl;
-				cout << "Die restliche Queue lautet wie folgt: ";
+				cout << "Die restliche Queue lautet wie folgt: " << endl;
 				myQueue.display();
-				cout << endl;
 			}
 			else
 			{
