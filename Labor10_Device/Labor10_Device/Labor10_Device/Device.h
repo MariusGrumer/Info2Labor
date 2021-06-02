@@ -1,3 +1,15 @@
+//Informatik 2 Labor
+// 
+//Teilnehmer			Matr.Nr.	Kurs			Semester	VS- Version		Betriebssystem
+//Philipp Huber			63326	Maschinenbau(Mabb)	6			2019 Community	Windows 10
+//Marius Grumer			63284	Maschinenbau(Mabb)	6			2019 Community	Windows 10
+//
+//Datum: 2021.06.02
+//
+//Sinn, Zweck der Datei:
+//Deklaration  der Klassen
+
+
 #pragma once
 
 #include <iostream>
@@ -18,7 +30,7 @@ public:
 	enum Mode {
 		Kaffeemaschine, Radio, Heizung, Unbekannt
 	};
-	CFernbedienung(CDevice* Dev1Ptr, CDevice* Dev2Ptr, CDevice* Dev3Ptr); // hier werden die //Adressen der Device-Objekte übergeben
+	CFernbedienung(string deviceName, CDevice* Dev1Ptr, CDevice* Dev2Ptr, CDevice* Dev3Ptr); // hier werden die //Adressen der Device-Objekte übergeben
 	virtual void mPlus();
 	virtual void mMinus();
 	virtual void mZustandsausgabe();
@@ -34,7 +46,7 @@ private:
 class CKaffemaschine :public CDevice
 {
 public:
-	CKaffemaschine(int i); // ctor mit Startwert
+	CKaffemaschine(string deviceName, int i); // ctor mit Startwert
 	virtual void mPlus();
 	virtual void mMinus();
 	virtual void mZustandsausgabe();
@@ -42,7 +54,7 @@ public:
 class CRadio :public CDevice
 {
 public:
-	CRadio(int i); // ctor mit Startwert
+	CRadio(string deviceName, int i); // ctor mit Startwert
 	virtual void mPlus();
 	virtual void mMinus();
 	virtual void mZustandsausgabe();
@@ -51,7 +63,7 @@ private:
 class CHeizung :public CDevice
 {
 public:
-	CHeizung(int i); // ctor mit Startwert
+	CHeizung(string deviceName, int i); // ctor mit Startwert
 	virtual void mPlus();
 	virtual void mMinus();
 	virtual void mZustandsausgabe();
