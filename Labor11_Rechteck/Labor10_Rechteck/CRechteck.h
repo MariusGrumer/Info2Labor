@@ -19,16 +19,13 @@ class CRechteck
 public:
 	CRechteck();
 	CRechteck(float& pXA, float& pYA, float& pXB, float& pYB);
-	~CRechteck();
-	bool setPunktA(float& pXA, float& pYA);
 	bool getPunktA(float& pXA, float& pYA);
-	bool setPunktB(float& pXB, float& pYB);
 	bool getPunktB(float& pXB, float& pYB);
 	bool getFlaeche(float &pA);
 	void display();
 
-private:
-	CPunkt mPunktA;
-	CPunkt mPunktB;
+private:					//Komposition
+	CPunkt mPunktA;			// A ist immer unten Rechts
+	CPunkt mPunktB;			// B ist immer oben Links
 };
 

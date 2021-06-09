@@ -20,9 +20,6 @@ CRechteck::CRechteck()
 	mPunktB.mY = 1;
 }
 
-CRechteck::~CRechteck()
-{
-}
 
 CRechteck::CRechteck(float& pXA, float& pYA, float& pXB, float& pYB)
 {
@@ -51,24 +48,11 @@ CRechteck::CRechteck(float& pXA, float& pYA, float& pXB, float& pYB)
 	}
 }
 
-bool CRechteck::setPunktA(float& pXA, float& pYA)
-{
-	mPunktA.mX = pXA;
-	mPunktA.mY = pYA;
-	return true;
-}
 
 bool CRechteck::getPunktA(float& pXA, float& pYA)
 {
 	pXA = mPunktA.mX;
 	pYA = mPunktA.mY;
-	return true;
-}
-
-bool CRechteck::setPunktB(float& pXB, float& pYB)
-{
-	mPunktB.mX = pXB;
-	mPunktB.mY = pYB;
 	return true;
 }
 
@@ -81,7 +65,7 @@ bool CRechteck::getPunktB(float& pXB, float& pYB)
 
 bool CRechteck::getFlaeche(float& pA)
 {
-	pA = (mPunktB.mX - mPunktA.mX) * (mPunktB.mY - mPunktA.mY);
+	pA = (mPunktB.mX - mPunktA.mX) * (mPunktB.mY - mPunktA.mY);	//Berechnug x-Differenz und y-Differenz --> multipliziert=Fläche
 	return true;
 }
 
